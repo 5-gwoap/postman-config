@@ -1,0 +1,83 @@
+{
+	"info": {
+		"name": "5-gwoap",
+		"_postman_id": "36278151-6677-dd7a-409d-7c28e6bc03c2",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AAF",
+			"description": "",
+			"item": [
+				{
+					"name": "AAF post wishlist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"familyId\": \"5a6ea08a3385f71d87699b5c\",\n  \"item\": {\n    \"itemName\": \"Eraser\",\n    \"itemQuantity\": 5,\n    \"itemCost\": 3\n  }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/wishlists/addItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlists",
+								"addItem"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "AAF read wishlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3005/api/wishlists/5a6ce58a7fec5a48004e4b74",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlists",
+								"5a6ce58a7fec5a48004e4b74"
+							]
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "weather-widget",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": ""
+				},
+				"description": "Getting weather api"
+			},
+			"response": []
+		}
+	]
+}
