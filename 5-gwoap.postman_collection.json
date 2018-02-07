@@ -1,14 +1,13 @@
 {
 	"info": {
 		"name": "5-gwoap",
-		"_postman_id": "36278151-6677-dd7a-409d-7c28e6bc03c2",
+		"_postman_id": "60ff279f-9c1f-db47-9142-4d426f2d8d40",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "AAF",
-			"description": "",
 			"item": [
 				{
 					"name": "AAF post wishlist",
@@ -36,8 +35,7 @@
 								"wishlists",
 								"addItem"
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				},
@@ -46,7 +44,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:3005/api/wishlists/5a6ce58a7fec5a48004e4b74",
 							"protocol": "http",
@@ -59,8 +60,30 @@
 								"wishlists",
 								"5a6ce58a7fec5a48004e4b74"
 							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "localhost:3005/api/wishlist/5a781c3f21b3a77745ee33be/read",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3005/api/wishlist/5a781c3f21b3a77745ee33be/read",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlist",
+								"5a781c3f21b3a77745ee33be",
+								"read"
+							]
 						},
-						"description": null
+						"description": "Gets a wishlist"
 					},
 					"response": []
 				}
@@ -71,7 +94,10 @@
 			"request": {
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
 					"raw": ""
 				},
