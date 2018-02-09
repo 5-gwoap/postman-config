@@ -1,7 +1,7 @@
 {
 	"info": {
 		"name": "5-gwoap",
-		"_postman_id": "60ff279f-9c1f-db47-9142-4d426f2d8d40",
+		"_postman_id": "ab14a3f4-d982-aa82-28d3-ac21efd275d1",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -69,7 +69,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "localhost:3005/api/wishlist/5a781c3f21b3a77745ee33be/read",
 							"host": [
@@ -84,6 +87,35 @@
 							]
 						},
 						"description": "Gets a wishlist"
+					},
+					"response": []
+				},
+				{
+					"name": "AAF find donors matching budget",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:3005/api/pairing/budget?budget=50000",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"pairing",
+								"budget"
+							],
+							"query": [
+								{
+									"key": "budget",
+									"value": "50000",
+									"equals": true
+								}
+							]
+						},
+						"description": "Takes a budget param and returns donors matching that budget +/- 10%"
 					},
 					"response": []
 				}
