@@ -1,18 +1,19 @@
 {
 	"info": {
 		"name": "5-gwoap",
-		"_postman_id": "ab14a3f4-d982-aa82-28d3-ac21efd275d1",
+		"_postman_id": "674a5ec4-5912-4e93-bd79-6d1cd59b9764",
 		"description": "",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "AAF",
+			"description": null,
 			"item": [
 				{
-					"name": "AAF post wishlist",
+					"name": "AAF patch wishlist - addItem",
 					"request": {
-						"method": "POST",
+						"method": "PATCH",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -21,10 +22,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"familyId\": \"5a6ea08a3385f71d87699b5c\",\n  \"item\": {\n    \"itemName\": \"Eraser\",\n    \"itemQuantity\": 5,\n    \"itemCost\": 3\n  }\n}"
+							"raw": "{\n  \"item\": {\n    \"itemName\": \"Eraser\",\n    \"itemQuantity\": 5,\n    \"itemCost\": 3\n  },\n  \"itemId\": \"5aa47a567a881a2829b3d97c\"\n}"
 						},
 						"url": {
-							"raw": "http://localhost:3005/api/wishlists/addItem",
+							"raw": "http://localhost:3005/api/wishlist/5aa4755a7f5cc2766a7bad17/addItem",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -32,10 +33,76 @@
 							"port": "3005",
 							"path": [
 								"api",
-								"wishlists",
+								"wishlist",
+								"5aa4755a7f5cc2766a7bad17",
 								"addItem"
 							]
-						}
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "AAF patch wishlist - removeItem",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"item\": {\n    \"itemName\": \"Eraser\",\n    \"itemQuantity\": 5,\n    \"itemCost\": 3\n  },\n  \"itemId\": \"5aa47a567a881a2829b3d97c\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/wishlist/5aa4755a7f5cc2766a7bad17/removeItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlist",
+								"5aa4755a7f5cc2766a7bad17",
+								"removeItem"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AAF patch wishlist - updateItem",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"item\": {\n    \"itemName\": \"THIS IS SOMETHING\",\n    \"itemQuantity\": 50,\n    \"itemCost\": 123124\n  },\n  \"itemId\": \"5aa47a527a881a2829b3d97b\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/wishlist/5aa4755a7f5cc2766a7bad17/updateItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlist",
+								"5aa4755a7f5cc2766a7bad17",
+								"updateItem"
+							]
+						},
+						"description": ""
 					},
 					"response": []
 				},
@@ -49,7 +116,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:3005/api/wishlists/5a6ce58a7fec5a48004e4b74",
+							"raw": "http://localhost:3005/api/wishlist/5aa4755a7f5cc2766a7bad17",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -57,10 +124,11 @@
 							"port": "3005",
 							"path": [
 								"api",
-								"wishlists",
-								"5a6ce58a7fec5a48004e4b74"
+								"wishlist",
+								"5aa4755a7f5cc2766a7bad17"
 							]
-						}
+						},
+						"description": null
 					},
 					"response": []
 				},
@@ -95,7 +163,10 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "localhost:3005/api/pairing/budget?budget=50000",
 							"host": [
@@ -116,6 +187,38 @@
 							]
 						},
 						"description": "Takes a budget param and returns donors matching that budget +/- 10%"
+					},
+					"response": []
+				},
+				{
+					"name": "AAF patch wishlist - create",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"familyId\": \"5aa4e79a6d158f1b05e661c2\",\n\t\"list\": [\n\t\t{\n\t\t\t\"itemName\": \"Laptop\",\n    \t\t\"itemQuantity\": 1,\n\t    \t\"itemCost\": 1200\n\t\t},\n\t\t{\n\t\t\t\"itemName\": \"Pencil Bag\",\n    \t\t\"itemQuantity\": 1,\n\t    \t\"itemCost\": 5\n\t\t},\n\t\t{\n\t\t\t\"itemName\": \"Mouse\",\n    \t\t\"itemQuantity\": 1,\n\t    \t\"itemCost\": 60\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3005/api/wishlist/5aa4e79a6d158f1b05e661c2/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"api",
+								"wishlist",
+								"5aa4e79a6d158f1b05e661c2",
+								"create"
+							]
+						},
+						"description": ""
 					},
 					"response": []
 				}
